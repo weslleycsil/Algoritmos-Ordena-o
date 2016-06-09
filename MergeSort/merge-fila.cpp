@@ -168,6 +168,7 @@ class FilaEncadeada {
             return new1.merge(new2);
 
         }
+        
         FilaEncadeada merge(FilaEncadeada fila2){
             FilaEncadeada filaOrdenada;
             if(getTam()== 1 && fila2.getTam()==2){
@@ -196,11 +197,6 @@ class FilaEncadeada {
             
             return filaOrdenada; 
             
-        }
-        
-        FilaEncadeada mergeSort(FilaEncadeada fila2){
-            fila2 = concatena(fila2);
-            return fila2.sort();
         }
         
 };
