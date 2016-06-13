@@ -55,13 +55,13 @@ int main(){
     int tamanho = 13;
     int * array = new int[tamanho];
     
+    printf("Array Original:\n");
+    
     for(int i = 0; i < tamanho; i++){
         array[i] =(rand()%100)+1;
-    }
-    
-    for(int i=0; i < tamanho; i++){
         printf("%d ",array[i]);
     }
+    
     printf("\n");
     array = countsort(array,tamanho);
     
