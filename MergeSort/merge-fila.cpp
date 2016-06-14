@@ -96,7 +96,7 @@ class FilaEncadeada {
         void mostra(){
             //Pilha esta vazia?
             if(inicioFila == NULL && fimFila == NULL){
-                printf("A Pilha está vazia.");
+                printf("A Fila está vazia.");
             } else {
                 Nodo* Aux;
 			    Aux = inicioFila;
@@ -109,7 +109,7 @@ class FilaEncadeada {
         }
         Nodo *getInicioFila(){
             if(inicioFila == NULL && fimFila == NULL){
-                printf("A Pilha está vazia.");
+                printf("A Fila está vazia.");
                 return NULL;
             }
             Nodo* Aux;
