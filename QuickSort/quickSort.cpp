@@ -1,33 +1,3 @@
-
-Conversa aberta. Uma mensagem lida.
-
-Pular para o conteúdo
-Usando Gmail com leitores de tela
-Remover marcador
- 
- 
-Mais 
-1 de 316
- 
-quick
-FURG - Email
-	x
-Weslley Silva <weslleycsil@gmail.com>
-	
-Anexos06:27 (Há 2 horas)
-		
-para weslley.silva
-Área de anexos
-	
-Clique aqui para Responder ou Encaminhar
-6,61 GB (38%) de 17 GB usados
-Gerenciar
-Termos de Serviço - Privacidade
-Última atividade da conta: Há 1 hora
-Detalhes
-	
-	
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
