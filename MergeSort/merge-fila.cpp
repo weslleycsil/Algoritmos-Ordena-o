@@ -206,7 +206,8 @@ class FilaEncadeada {
 int main (){
 
 	FilaEncadeada f1, f2, f3;
-    
+    srand(time(NULL));
+
     for(int i = 0; i < 10; i++){
         f1.insere(new Nodo((rand()%100)+1));
         f2.insere(new Nodo((rand()%100)+1));
