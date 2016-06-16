@@ -1,3 +1,33 @@
+
+Conversa aberta. Uma mensagem lida.
+
+Pular para o conteúdo
+Usando Gmail com leitores de tela
+Remover marcador
+ 
+ 
+Mais 
+1 de 316
+ 
+quick
+FURG - Email
+	x
+Weslley Silva <weslleycsil@gmail.com>
+	
+Anexos06:27 (Há 2 horas)
+		
+para weslley.silva
+Área de anexos
+	
+Clique aqui para Responder ou Encaminhar
+6,61 GB (38%) de 17 GB usados
+Gerenciar
+Termos de Serviço - Privacidade
+Última atividade da conta: Há 1 hora
+Detalhes
+	
+	
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -68,7 +98,7 @@ class FilaEncadeada {
                 fimFila = novoNodo;
                 fimFila->setProx(NULL);
                 tamanho++;
-                printf("Registro inserido com sucesso!\n");
+                //printf("Registro inserido com sucesso!\n");
                 return 1;
             }         
             //insiro na fila
@@ -76,7 +106,7 @@ class FilaEncadeada {
             fimFila = novoNodo;
             fimFila->setProx(NULL);
             tamanho++;   
-            printf("Registro inserido com sucesso!\n");
+            //printf("Registro inserido com sucesso!\n");
             return 1;
         }
         
@@ -90,14 +120,14 @@ class FilaEncadeada {
             registro = inicioFila;
             inicioFila = inicioFila->getProx();
             tamanho--;
-            printf("Registro removido.\n");
+            //printf("Registro removido.\n");
             return registro;
         }
         
         void mostra(){
-            //Pilha esta vazia?
+            //Fila esta vazia?
             if(inicioFila == NULL && fimFila == NULL){
-                printf("A Pilha está vazia.");
+                printf("A Fila está vazia.");
             } else {
                 Nodo* Aux;
 			    Aux = inicioFila;
@@ -152,27 +182,33 @@ class FilaEncadeada {
             //escolho o pivo
             pivo = getInicioFila(); //"randominacamente"
             
+            //debug
+            /*printf("Pivo:");
+            pivo->mostra();
+            printf("\n");*/
+
             //separo os maiores e menores
             
             for(int i=0; i < tamanho; i++){
                 
                 if(getInicioFila()->getX() < pivo->getX()){
-                    //printf("Menores\n");
-                    getInicioFila()->mostra();
+                    //printf("Menor\n");
+                    //getInicioFila()->mostra();
                     menores.insere(remove());
                     
                 } else if(getInicioFila()->getX() > pivo->getX()){
-                    //printf("Maiores\n");
+                    //printf("Maior\n");
                     maiores.insere(remove());
                     
                 } else {
-                    //printf("Iguais\n");
+                    ////printf("Iguais\n");
                     iguais.insere(remove());
                 }
                 
             }
             
-            /*printf("Vetor Menores:\n");
+            //debug
+            /*(printf("Vetor Menores:\n");
             menores.mostra();
             printf("\n");
             printf("Vetor Maiores:\n");
@@ -180,23 +216,40 @@ class FilaEncadeada {
             printf("\n");
             printf("Vetor iguais:\n");
             iguais.mostra();
-            printf("\n");*/
+            printf("\n");
+            printf("FIM\n");*/
             
             //chamada da recursividade
             
             if(menores.getTam()>2){
+                //printf("tamanho maior que 2\n");
                 menores = menores.quick();
             } else if(menores.getTam() != 1 && menores.getTam() > 0){
-                // caso trivial
-                menores.insere(menores.remove());
+                if(menores.getInicioFila()->getX() > menores.getInicioFila()->getProx()->getX()){
+                    // caso trivial
+                    //printf("Trivial 1");
+                    menores.insere(menores.remove());
+                }
             }
             if(maiores.getTam()>2){
+                //printf("tamanho menor que 2\n");
                 maiores = maiores.quick();
             } else if(maiores.getTam() != 1 && maiores.getTam() > 0){
-                // caso trivial
-                 maiores.insere(maiores.remove());
+                if(maiores.getInicioFila()->getX() > maiores.getInicioFila()->getProx()->getX()){
+                    // caso trivial
+                    //printf("Trivial 2\n");
+                    maiores.insere(maiores.remove());
+                }
             }
             
+            /*printf("Menor:\n");
+            menores.mostra();
+            printf("\n\n");
+            printf("Maior:\n");
+            maiores.mostra();
+            printf("\n\n");*/
+
+
             final = menores.concatena(iguais);
             final = final.concatena(maiores);
             return final;
@@ -209,6 +262,7 @@ class FilaEncadeada {
 int main(){
     
     FilaEncadeada f1;
+    srand(time(NULL));
     
     for(int i = 0; i <30; i++){
         f1.insere(new Nodo((rand()%100)+1));
@@ -216,7 +270,6 @@ int main(){
     
     
     f1.mostra();
-    printf("\n\n");
     f1 = f1.quick();
     f1.mostra();
     
