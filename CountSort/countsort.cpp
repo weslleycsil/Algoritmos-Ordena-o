@@ -54,7 +54,8 @@ int main(){
     
     int tamanho = 13;
     int * array = new int[tamanho];
-    
+    srand(time(NULL));
+
     printf("Array Original:\n");
     
     for(int i = 0; i < tamanho; i++){

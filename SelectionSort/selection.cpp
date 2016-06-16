@@ -8,7 +8,8 @@ int main(){
     int * vetor = new int[tamanho];
     int menor;
     int cont, aux, passei;
-    
+    srand(time(NULL));
+
     //criar vetor
     for(int i = 0; i < tamanho; i++){
         vetor[i] = (rand()%100)+1;
