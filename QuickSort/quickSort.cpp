@@ -194,7 +194,12 @@ class FilaEncadeada {
             if(menores.getTam()>2){
                 //printf("tamanho maior que 2\n");
                 menores = menores.quick();
+<<<<<<< HEAD
             } else if(menores.getTam() != 1 && menores.getTam() > 0){
+=======
+            } //else if(menores.getTam() != 1 && menores.getTam() > 0){
+            	else if(menores.getTam() == 2){
+>>>>>>> origin/master
                 if(menores.getInicioFila()->getX() > menores.getInicioFila()->getProx()->getX()){
                     // caso trivial
                     //printf("Trivial 1");
@@ -204,7 +209,12 @@ class FilaEncadeada {
             if(maiores.getTam()>2){
                 //printf("tamanho menor que 2\n");
                 maiores = maiores.quick();
+<<<<<<< HEAD
             } else if(maiores.getTam() != 1 && maiores.getTam() > 0){
+=======
+            } //else if(maiores.getTam() != 1 && maiores.getTam() > 0){
+              else if(maiores.getTam() == 2){
+>>>>>>> origin/master
                 if(maiores.getInicioFila()->getX() > maiores.getInicioFila()->getProx()->getX()){
                     // caso trivial
                     //printf("Trivial 2\n");
@@ -234,7 +244,7 @@ int main(){
     FilaEncadeada f1;
     srand(time(NULL));
     
-    for(int i = 0; i <30; i++){
+    for(int i = 0; i <10; i++){
         f1.insere(new Nodo((rand()%100)+1));
     }
     
